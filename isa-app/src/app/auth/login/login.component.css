@@ -1,0 +1,26 @@
+#login-form {
+  height: 350px;
+  border: 1px solid;
+  border-color: #4C0000;
+  max-width: 500px;
+  margin: auto;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: rgba(242, 224, 224, 0.733);
+}
+
+#section-login {
+  color: whitesmoke;
+  padding-top: 105px;
+  align-content: center;
+  margin: auto;
+}
+
+
+
+.extra {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+}
+

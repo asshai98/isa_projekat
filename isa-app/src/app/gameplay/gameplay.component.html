@@ -1,1 +1,48 @@
-<p>gameplay works!</p>
+<mat-toolbar color="primary" role="heading" class="mat-toolbar">
+  <img  src="../../assets/logo.png" alt="Logo" width="60px" height="60px">
+  <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px" fxHide.xs>
+    <a mat-list-item routerLink="/welcome" style="color: white; text-decoration: none;">Welcome</a>
+    <a mat-list-item routerLink="/campaigns"  style="color: white; text-decoration: none;">Campaigns</a>
+    <a mat-list-item routerLink="/gameplay"  style="color: white; text-decoration: none;">Gameplay</a>
+  </div>
+</mat-toolbar>
+
+<mat-tab-group dynamicHeight="true">
+  <mat-tab label="My Characters">
+    <div fxLayoutAlign="center center">
+      <mat-form-field fxFlex="25%">
+        <input matInput type="text"  placeholder="Filter">
+      </mat-form-field>
+    </div>
+    <div  fxLayoutAlign="center center">
+      TABELA
+    </div>
+  </mat-tab>
+  <mat-tab label="Create character">
+    <section class="add-char-form">
+      <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" id="char-form">
+        <mat-form-field>
+          <input type="text" matInput placeholder="Character name" ngModel name="charname" required #charnameInput="ngModel">
+          <mat-error *ngIf="charnameInput.hasError('required')">Field should not be empty!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="email" matInput placeholder="Age" ngModel name="age" email required #ageInput="ngModel">
+          <mat-error *ngIf="ageInput.hasError('required')">Field should not be empty!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Class" ngModel name="class" required #classInput="ngModel">
+          <mat-error *ngIf="classInput.hasError('required')">Field should not be empty!</mat-error>
+          <mat-error *ngIf="!classInput.hasError('required')">Please use the correct format!</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <input type="text" matInput placeholder="Race" ngModel name="race" required #raceInput="ngModel">
+          <mat-error *ngIf="raceInput.hasError('required')">Field should not be empty!</mat-error>
+          <mat-error *ngIf="!raceInput.hasError('required')">Please use the correct format!</mat-error>
+        </mat-form-field>
+        <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+      </form>
+    </section>
+
+  </mat-tab>
+
+</mat-tab-group>

@@ -1,0 +1,12 @@
+.add-char-form{
+  padding: 15px;
+}
+
+#char-form{
+  border: 1px solid #4C0000;
+  background-color:  rgba(242, 224, 224, 0.733);
+  padding: 5px;
+  height: 500px;
+}
+
+

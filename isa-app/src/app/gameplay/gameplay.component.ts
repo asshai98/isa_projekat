@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameplayComponent implements OnInit {
 
+  errorExists = false;
+  errorText = "";
+
+
   constructor() { }
 
   ngOnInit(): void {
+
   }
 
 }

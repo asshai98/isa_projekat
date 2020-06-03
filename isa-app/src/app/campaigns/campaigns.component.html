@@ -1,1 +1,25 @@
-<p>campaigns works!</p>
+<mat-toolbar color="primary" role="heading" class="mat-toolbar">
+  <img  src="../../assets/logo.png" alt="Logo" width="60px" height="60px">
+  <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px" fxHide.xs>
+    <a mat-list-item routerLink="/welcome"  style="color: white; text-decoration: none;">Welcome</a>
+    <a mat-list-item routerLink="/campaigns"  style="color: white; text-decoration: none;">Campaigns</a>
+    <a mat-list-item routerLink="/gameplay"  style="color: white; text-decoration: none;">Gameplay</a>
+  </div>
+</mat-toolbar>
+
+<mat-tab-group dynamicHeight="true">
+  <mat-tab label="Recommened">
+    <div fxLayoutAlign="center center">
+      <mat-form-field fxFlex="25%">
+        <input matInput type="text"  placeholder="Filter">
+      </mat-form-field>
+    </div>
+  <div  fxLayoutAlign="center center">
+      TABELA
+  </div>
+  </mat-tab>
+  <mat-tab label="History">
+
+  </mat-tab>
+
+</mat-tab-group>

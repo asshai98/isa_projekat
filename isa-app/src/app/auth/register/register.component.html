@@ -1,1 +1,45 @@
-<p>register works!</p>
+<section>
+  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Fullname" ngModel name="fullname" required #fullnameInput="ngModel">
+      <mat-error *ngIf="fullnameInput.hasError('required')">Field should not be empty!</mat-error>
+      <mat-error *ngIf="!fullnameInput.hasError('required')">Please use the correct format!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="email" matInput placeholder="E-mail" ngModel name="email" email required #emailInput="ngModel">
+      <mat-error *ngIf="emailInput.hasError('required')">Field should not be empty!</mat-error>
+      <mat-error *ngIf="!emailInput.hasError('required')">Please use the correct email format!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username" ngModel name="username" required #usernameInput="ngModel">
+      <mat-error *ngIf="usernameInput.hasError('required')">Field should not be empty!</mat-error>
+      <mat-error *ngIf="!usernameInput.hasError('required')">Please use the correct format!</mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="Please enter minimum 8 characters.">
+      <input type="password" matInput placeholder="Password" ngModel name="password" required minlength="8" #passInput="ngModel">
+      <mat-hint align="end"> {{ passInput.value?.length }} / 8 </mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Address" ngModel name="address" required #addressInput="ngModel">
+      <mat-error *ngIf="addressInput.hasError('required')">Field should not be empty!</mat-error>
+      <mat-error *ngIf="!addressInput.hasError('required')">Please use the correct format!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Your interests</mat-label>
+      <mat-error *ngIf="interestsInput.hasError('required')">Field should not be empty!</mat-error>
+      <mat-select [(ngModel)]="selectedValue" name="interests" #interestsInput="ngModel" multiple required>
+        <mat-option *ngFor="let i of interests" [value]="i.value">
+          {{i.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+
+
+    <mat-checkbox color="primary" ngModel name="acceptance" required>
+      I accept the terms of conditions of use.
+    </mat-checkbox>
+
+    <mat-label *ngIf="errorExists"> {{errorText}} </mat-label>
+  </form>
+</section>

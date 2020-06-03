@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RoutingModule } from './routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MaterialModule } from "./material.module";
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -9,6 +14,7 @@ import { SuccessComponent } from './auth/success/success.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +28,15 @@ import { CampaignsComponent } from './campaigns/campaigns.component';
     CampaignsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RoutingModule,
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

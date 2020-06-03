@@ -1,1 +1,96 @@
-<p>welcome works!</p>
+<mat-toolbar color="primary" role="heading" class="mat-toolbar">
+  <img  src="../../assets/logo.png" alt="Logo" width="60px" height="60px">
+  <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px" fxHide.xs>
+    <a mat-list-item routerLink="/welcome"  style="color: white; text-decoration: none;">Welcome</a>
+    <a mat-list-item routerLink="/campaigns"  style="color: white; text-decoration: none;">Campaigns</a>
+    <a mat-list-item routerLink="/gameplay"  style="color: white; text-decoration: none;">Gameplay</a>
+  </div>
+</mat-toolbar>
+
+<header  class="header">
+
+</header>
+
+<div class="center-content">
+  <h3 class="title"> About </h3>
+  <p> Play Dungeons & Dragons with friends across the world on the award-winning Roll20 virtual tabletop.
+    It's free-to-use, browser based, and features a full suite of tools to quickly build characters, roll dice, and run any campaign.</p>
+  <p> This app provides a rich toolset including a character builder, having your own custom character collection, profile editing tools and so on. Explore full digital conversions of official D&D content,
+    including ready-to-play adventures, drag-and-drop monsters, integrated rulebooks, and more. Sign up for your free account at Roll20.net!</p>
+</div>
+<div class="characters">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile id="char-1">
+      <p class="race"> <a href="https://www.dndbeyond.com/classes/fighter"> FIGHTER </a></p>
+    </mat-grid-tile>
+    <mat-grid-tile id="char-2">
+      <p class="race"> <a href="https://www.dndbeyond.com/classes/ranger"> RANGER </a> </p>
+    </mat-grid-tile>
+    <mat-grid-tile id="char-3">
+      <p class="race"> <a href="https://www.dndbeyond.com/classes/cleric"> CLERIC </a> </p>
+    </mat-grid-tile>
+    <mat-grid-tile id="char-4">
+      <p class="other"> OTHER CLASSES </p>
+      <button type="submit" mat-raised-button color="primary"> <a href="https://dnd.wizards.com/products/tabletop-games/rpg-products/rpg_playershandbook" style="color: white; text-decoration: none;"> View products </a></button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<div class="articles">
+  <h3> Related articles </h3>
+  <mat-grid-list cols="3" id="mat-list">
+    <mat-grid-tile  id="tile-1">
+      <mat-card class="example-card" role="group">
+        <mat-card-header>
+          <!--<div mat-card-avatar class="example-header-image"></div>-->
+          <mat-card-title>Force grey</mat-card-title>
+          <mat-card-subtitle>The lost episode</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/tile-1.jpg" alt="Photo">
+        <mat-card-content>
+          <p>  Our thanks to everyone who watched the Force Grey: The Lost Episode livestream!
+            We certainly hope you enjoyed the experience!</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>  <a href="https://dnd.wizards.com/articles/news/forcegrey_lostepisode" style="text-decoration: none; color: black"> MORE INFO </a> </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile  id="tile-2">
+      <mat-card class="example-card" role="group">
+        <mat-card-header>
+          <!--<div mat-card-avatar class="example-header-image"></div>-->
+          <mat-card-title>Toy hall of fame</mat-card-title>
+          <mat-card-subtitle>D&D Induction</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/tile-2.jpg" alt="Photo">
+        <mat-card-content>
+          <p>  Today, Dungeons & Dragons was introduced into the National Toy Hall of Fame at the Strong
+          Museum for Play</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button> <a href="https://dnd.wizards.com/articles/news/toy-hall-fame" style="color: black; text-decoration: none;"> MORE INFO... </a></button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile  id="tile-3">
+      <mat-card class="example-card" role="group">
+        <mat-card-header>
+          <!--<div mat-card-avatar class="example-header-image"></div>-->
+          <mat-card-title>Character portraits</mat-card-title>
+          <mat-card-subtitle>TRPG Resources</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="../../assets/tile-3.jpg" alt="Photo">
+        <mat-card-content>
+          <p> Sized and formatted for ready use with our form-fillable character sheet. Hurry up and create
+          character of your own!</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button> <a href="https://dnd.wizards.com/articles/features/character-portraits" style="text-decoration: none; color: black;"> MORE INFO...</a></button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<footer>
+  <p>&copy; 2020 - ISA application </p>
+</footer>

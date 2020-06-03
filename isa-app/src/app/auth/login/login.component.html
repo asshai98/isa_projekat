@@ -1,1 +1,19 @@
-<p>login works!</p>
+<section id="section-login">
+  <form id="login-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Username" ngModel name="username" required #usernameInput="ngModel">
+      <mat-error *ngIf="usernameInput.hasError('required')">Field should not be empty!</mat-error>
+      <mat-error *ngIf="!usernameInput.hasError('required')">Please use the correct format!</mat-error>
+    </mat-form-field>
+    <mat-form-field hintLabel="Please enter minimum 8 characters.">
+      <input type="password" matInput placeholder="Password" ngModel name="password" required minlength="8" #passInput="ngModel">
+      <mat-hint align="end"> {{ passInput.value?.length }} / 8 </mat-hint>
+    </mat-form-field> <br>
+    <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Submit</button>
+    <mat-label *ngIf="errorExists"> {{errorText}} </mat-label>
+  </form>
+  <div class="extra">
+    <mat-label> Don't have an account? </mat-label>
+    <button mat-button (click)="redirect()"> Register </button>
+  </div>
+</section>
