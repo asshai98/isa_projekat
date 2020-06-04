@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import {Users} from "../user";
+import {UserService} from "../user.service";
 
 
 
@@ -18,21 +20,24 @@ interface Interests {
 
 
 export class RegisterComponent implements OnInit {
-  selectedValue: string;
+
+  user = new Users();
 
   errorExists = false;
   errorText = "";
 
-  interests: Interests[] = [
-    {value: 'pc-games', viewValue: 'PC Games'},
-    {value: 'card-games', viewValue: 'Card Games'},
-    {value: 'anime-panel', viewValue: 'Anime Panel'},
-    {value: 'gaming-tournaments', viewValue: 'Gaming Tournaments'}
-  ];
-
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _service:UserService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(form:NgForm){
+    this._service.registerUserFromRemote(this.user).subscribe(
+      data => console.log("Reponse recieved!"),
+      error => console.log("Exeption occured")
+    );
+    this.errorExists = false;
+    this.router.navigate(['welcome']);
   }
 
 }

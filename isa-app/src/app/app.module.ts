@@ -15,6 +15,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {UserService} from "./auth/user.service";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -34,11 +36,12 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     FlexLayoutModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
 
 
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
