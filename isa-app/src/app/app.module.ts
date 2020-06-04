@@ -17,6 +17,8 @@ import { CampaignsComponent } from './campaigns/campaigns.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserService} from "./auth/user.service";
 import {HttpClientModule} from "@angular/common/http";
+import { EditComponent } from './gameplay/edit/edit.component';
+import { DeleteComponent } from './gameplay/delete/delete.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {HttpClientModule} from "@angular/common/http";
     SuccessComponent,
     WelcomeComponent,
     GameplayComponent,
-    CampaignsComponent
+    CampaignsComponent,
+    EditComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
