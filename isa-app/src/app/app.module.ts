@@ -19,6 +19,8 @@ import {UserService} from "./auth/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import { EditComponent } from './gameplay/edit/edit.component';
 import { DeleteComponent } from './gameplay/delete/delete.component';
+import { ViewComponent } from './gameplay/view/view.component';
+import { AddComponent } from './gameplay/add/add.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { DeleteComponent } from './gameplay/delete/delete.component';
     GameplayComponent,
     CampaignsComponent,
     EditComponent,
-    DeleteComponent
+    DeleteComponent,
+    ViewComponent,
+    AddComponent
   ],
   imports: [
     BrowserModule,
