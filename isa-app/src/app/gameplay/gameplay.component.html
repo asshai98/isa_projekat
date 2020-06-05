@@ -26,10 +26,10 @@
 
   <ng-container matColumnDef="action">
     <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
-    <mat-cell *matCellDef="let row">
-      <button mat-raised-button color="accent">Details</button>
-      <button mat-raised-button color="accent">Edit</button>
-      <button mat-raised-button color="accent">Delete</button>
+    <mat-cell *matCellDef="let element">
+      <button mat-raised-button color="accent" (click)="goToDetails(element.character_id)">Details</button>
+      <button mat-raised-button color="accent" (click)="goToEdit(element.character_id)">Edit</button>
+      <button mat-raised-button color="accent" (click)="deleteProduct(element.character_id)">Delete</button>
     </mat-cell>
   </ng-container>
 

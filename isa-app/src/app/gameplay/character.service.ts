@@ -16,4 +16,14 @@ export class CharacterService{
   public addCharacter(character:Characters):Observable<any>{
     return this._http.post<any>("http://localhost:8181/add", character);
   }
+
+  //path variable
+  public fetchCharactersById(character_id:number):Observable<any>{
+    return this._http.get<any>("http://localhost:8181/character/"+character_id);
+  }
+
+  public deleteCharactersById(character_id:number):Observable<any>{
+    return this._http.get<any>("http://localhost:8181/delete/"+character_id);
+  }
+
 }

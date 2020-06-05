@@ -7,6 +7,9 @@ import {CampaignsComponent} from "./campaigns/campaigns.component";
 import {GameplayComponent} from "./gameplay/gameplay.component";
 import {ProfileComponent} from "./auth/profile/profile.component";
 import {AddComponent} from "./gameplay/add/add.component";
+import {EditComponent} from "./gameplay/edit/edit.component";
+import {ViewComponent} from "./gameplay/view/view.component";
+import {DeleteComponent} from "./gameplay/delete/delete.component";
 
 const rute: Routes = [
   {path: '', component: LoginComponent},
@@ -15,7 +18,11 @@ const rute: Routes = [
   {path: 'campaigns', component: CampaignsComponent},
   {path: 'gameplay', component: GameplayComponent},
   {path: 'profile', component: ProfileComponent},
-  {path: 'add', component: AddComponent}
+  {path: 'add', component: AddComponent},
+  {path: 'edit', component: EditComponent},
+  {path: 'edit/:id', component: EditComponent},
+  {path: 'character/:id', component: ViewComponent},
+  {path: 'delete/:id', component: DeleteComponent}
 ];
 
 @NgModule({

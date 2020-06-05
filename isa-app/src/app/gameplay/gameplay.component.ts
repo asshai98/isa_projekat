@@ -39,8 +39,22 @@ export class GameplayComponent implements OnInit {
     this.router.navigate(['add']);
   }
 
+  goToEdit(id:number) {
+    this.router.navigate(['edit', id]);
+  }
 
+  goToDetails(id:number){
+    this.router.navigate(['character', id]);
+  }
 
-
+  deleteProduct(id:number){
+      this._service.deleteCharactersById(id).subscribe(
+        data=>{
+          console.log("Success");
+          this.router.navigate(['gameplay']);
+        },
+        error => console.log("Error")
+      );
+  }
 
 }
