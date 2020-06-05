@@ -8,3 +8,35 @@
   </div>
 </mat-toolbar>
 
+<mat-table [dataSource]="characterDataSource" matSort>
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Character_id</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.character_id}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Character name</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="username">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Username </mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.username }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button mat-raised-button color="accent">Details</button>
+      <button mat-raised-button color="accent">Edit</button>
+      <button mat-raised-button color="accent">Delete</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let rows; columns: displayedColumns;"></mat-row>
+  <mat-header-row ></mat-header-row>
+  <mat-row ></mat-row>
+</mat-table>
+<mat-paginator [pageSize]="10" [pageSizeOptions]="[5,10,20,50,100]"></mat-paginator>
+<button mat-raised-button color="accent" (click)="goToAddCharacter()">Add new character</button>

@@ -5,12 +5,6 @@ import {Users} from "../user";
 import {UserService} from "../user.service";
 
 
-
-interface Interests {
-  value: string;
-  viewValue: string;
-}
-
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

@@ -22,6 +22,8 @@ import { DeleteComponent } from './gameplay/delete/delete.component';
 import { ViewComponent } from './gameplay/view/view.component';
 import { AddComponent } from './gameplay/add/add.component';
 
+import {CharacterService} from "./gameplay/character.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +51,7 @@ import { AddComponent } from './gameplay/add/add.component';
 
 
   ],
-  providers: [UserService],
+  providers: [UserService, CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

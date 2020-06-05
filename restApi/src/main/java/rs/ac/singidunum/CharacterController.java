@@ -12,6 +12,7 @@ public class CharacterController {
     private CharacterService characterService;
 
     @GetMapping("/gameplay")
+    @CrossOrigin(origins = "http://localhost:4200")
     public List<Characters> fetchCharactersList(){
         List<Characters> characters = new ArrayList<Characters>();
         characters = characterService.fetchAllCharacters();
@@ -20,11 +21,13 @@ public class CharacterController {
 
 
     @PostMapping ("/add")
+    @CrossOrigin(origins = "http://localhost:4200")
     public Characters saveCharacter(@RequestBody Characters character){
         return characterService.saveCharacterToDB(character);
     }
 
     @GetMapping("/character/{character_id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public Characters fetchCharacterById(@PathVariable int character_id){
 
         return characterService.fetchCharacterById(character_id).get();
@@ -32,6 +35,7 @@ public class CharacterController {
     }
 
     @GetMapping("/delete/{character_id}")
+    @CrossOrigin(origins = "http://localhost:4200")
     public void deleteCharById(@PathVariable int character_id){
 
          characterService.deleteById(character_id);
