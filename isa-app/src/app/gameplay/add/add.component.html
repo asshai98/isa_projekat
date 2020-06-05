@@ -1,5 +1,5 @@
-<section>
-  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+<section id="section-register">
+  <form id="register-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <mat-form-field>
       <input type="text" matInput placeholder="Character name" ngModel name="charname" required #charNameInput="ngModel" [(ngModel)]="character.name">
       <mat-error *ngIf="charNameInput.hasError('required')">Field should not be empty!</mat-error>
@@ -22,7 +22,7 @@
       <mat-error *ngIf="!usernameInput.hasError('required')">Please use the correct format!</mat-error>
     </mat-form-field>
 
-    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <div class="extra" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
       <button type="submit" mat-raised-button color="primary">Submit</button>
       <button type="submit" mat-raised-button color="primary" (click)="goBack()">Back</button>
     </div>

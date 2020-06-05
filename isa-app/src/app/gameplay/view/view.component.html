@@ -1,9 +1,18 @@
-<ul>
+<div class="char-image" fxLayout="row" fxLayoutAlign="center center">
+  <img src="../../../assets/fighter.jpg" alt="Character img" style="width: 370px; height: 300px; padding-top: 30px;">
+</div>
+
+<ul fxLayoutAlign="center center" fxLayout="column" style="color: whitesmoke; text-decoration: none;">
   <li *ngFor="let char of characters">
-    <p> {{char.name}}</p>
-    <p> {{char.age}}</p>
-    <p> {{char.race}}</p>
-    <p> {{char.clas}}</p>
-    <p> {{char.username}}</p>
+
+    <p style="font-size: 40px"> {{char.name}}</p>
+    <p style="background: #4C0000; text-align: center"> Age: </p>
+    <p style="font-size: 25px"> {{char.age}}</p>
+    <p style="background: #4C0000; text-align: center"> Race: </p>
+    <p style="font-size: 25px"> {{char.race}}</p>
+    <p style="background: #4C0000; text-align: center"> Class: </p>
+    <p style="font-size: 25px"> {{char.clas}}</p>
+    <p style="background: #4C0000; text-align: center"> User: </p>
+    <p style="font-size: 25px"> {{char.username}}</p>
   </li>
 </ul>

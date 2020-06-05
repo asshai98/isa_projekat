@@ -1,0 +1,23 @@
+#register-form{
+  border: 1px solid;
+  border-color: #4C0000;
+  max-width: 500px;
+  margin: auto;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  background-color: rgba(242, 224, 224, 0.733);
+  padding-top: 20px;
+
+}
+
+.extra{
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+#section-register{
+  padding-top: 55px;
+}

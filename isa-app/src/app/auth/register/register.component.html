@@ -1,5 +1,5 @@
-<section>
-  <form fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+<section id="section-register">
+  <form id="register-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
     <mat-form-field>
       <input type="text" matInput placeholder="Forename" ngModel name="forename" required #forenameInput="ngModel" [(ngModel)]="user.forename">
       <mat-error *ngIf="forenameInput.hasError('required')">Field should not be empty!</mat-error>
@@ -30,10 +30,11 @@
 
     <button type="submit" mat-raised-button color="primary">Register</button>
 
-    <mat-checkbox color="primary" ngModel name="acceptance" required>
-      I accept the terms of conditions of use.
-    </mat-checkbox>
-
+    <div class="extra">
+      <mat-checkbox color="primary" ngModel name="acceptance" required>
+        I accept the terms of conditions of use.
+      </mat-checkbox>
+    </div>
     <mat-label *ngIf="errorExists"> {{errorText}} </mat-label>
   </form>
 </section>

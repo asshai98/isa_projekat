@@ -26,7 +26,7 @@
 
   <ng-container matColumnDef="action">
     <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
-    <mat-cell *matCellDef="let element">
+    <mat-cell fxLayout="row" fxLayoutGap="10px" *matCellDef="let element">
       <button mat-raised-button color="accent" (click)="goToDetails(element.character_id)">Details</button>
       <button mat-raised-button color="accent" (click)="goToEdit(element.character_id)">Edit</button>
       <button mat-raised-button color="accent" (click)="deleteProduct(element.character_id)">Delete</button>
@@ -38,5 +38,8 @@
   <mat-header-row ></mat-header-row>
   <mat-row ></mat-row>
 </mat-table>
+
 <mat-paginator [pageSize]="10" [pageSizeOptions]="[5,10,20,50,100]"></mat-paginator>
-<button mat-raised-button color="accent" (click)="goToAddCharacter()">Add new character</button>
+<div class="button-add">
+  <button mat-raised-button color="accent" (click)="goToAddCharacter()">Add new character</button>
+</div>
