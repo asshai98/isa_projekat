@@ -26,6 +26,7 @@ import { AddCampaignComponent } from './campaigns/add-campaign/add-campaign.comp
 import { DeleteCampaignComponent } from './campaigns/delete-campaign/delete-campaign.component';
 import { EditCampaignComponent } from './campaigns/edit-campaign/edit-campaign.component';
 import {CampaignService} from "./campaigns/campaign.service";
+import { HistoryComponent } from './history/history.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {CampaignService} from "./campaigns/campaign.service";
     AddComponent,
     AddCampaignComponent,
     DeleteCampaignComponent,
-    EditCampaignComponent
+    EditCampaignComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

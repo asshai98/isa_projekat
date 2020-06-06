@@ -16,6 +16,8 @@ export class CampaignsComponent implements OnInit {
   displayedColumns = ["id", "name", "description","starts_at", "ends_at", "action"];
   campaignsDataSource: MatTableDataSource<Campaigns>;
 
+
+
   @ViewChild(MatSort) sort : MatSort;
   @ViewChild(MatPaginator) paginator : MatPaginator;
 
@@ -26,7 +28,9 @@ export class CampaignsComponent implements OnInit {
     this._service.fetchCampaignList().subscribe(data=>{
       this.campaignsDataSource.data = data;
       return data;
-    })
+    });
+
+
   }
 
   ngAfterViewInit() {

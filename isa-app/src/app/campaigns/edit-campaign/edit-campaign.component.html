@@ -1,1 +1,27 @@
-<p>edit-campaign works!</p>
+<section id="section-register">
+  <form id="register-form" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px" #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <mat-form-field>
+      <input type="text" matInput placeholder="Campaign name" ngModel name="campName" required #campNameInput="ngModel" [(ngModel)]="campaign.name">
+      <mat-error *ngIf="campNameInput.hasError('required')">Field should not be empty!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Description" ngModel name="description" required #descInput="ngModel" [(ngModel)]="campaign.description">
+      <mat-error *ngIf="descInput.hasError('required')">Field should not be empty!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Starts at" ngModel name="starts_at"  required #startsInput="ngModel" [(ngModel)]="campaign.starts_at">
+      <mat-error *ngIf="startsInput.hasError('required')">Field should not be empty!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="text" matInput placeholder="Ends at" ngModel name="ends_at" required #endsInput="ngModel" [(ngModel)]="campaign.ends_at">
+      <mat-error *ngIf="endsInput.hasError('required')">Field should not be empty!</mat-error>
+    </mat-form-field>
+
+    <div class="extra" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <button type="submit" mat-raised-button color="primary">Edit</button>
+      <button type="submit" mat-raised-button color="primary" (click)="goBack()">Back</button>
+    </div>
+    <mat-label *ngIf="errorExists"> {{errorText}} </mat-label>
+  </form>
+</section>
+
