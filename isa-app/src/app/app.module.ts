@@ -9,7 +9,6 @@ import { MaterialModule } from "./material.module";
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
-import { ProfileComponent } from './auth/profile/profile.component';
 import { SuccessComponent } from './auth/success/success.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { GameplayComponent } from './gameplay/gameplay.component';
@@ -23,13 +22,17 @@ import { ViewComponent } from './gameplay/view/view.component';
 import { AddComponent } from './gameplay/add/add.component';
 
 import {CharacterService} from "./gameplay/character.service";
+import { AddCampaignComponent } from './campaigns/add-campaign/add-campaign.component';
+import { DeleteCampaignComponent } from './campaigns/delete-campaign/delete-campaign.component';
+import { EditCampaignComponent } from './campaigns/edit-campaign/edit-campaign.component';
+import {CampaignService} from "./campaigns/campaign.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent,
+
     SuccessComponent,
     WelcomeComponent,
     GameplayComponent,
@@ -37,7 +40,10 @@ import {CharacterService} from "./gameplay/character.service";
     EditComponent,
     DeleteComponent,
     ViewComponent,
-    AddComponent
+    AddComponent,
+    AddCampaignComponent,
+    DeleteCampaignComponent,
+    EditCampaignComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,7 @@ import {CharacterService} from "./gameplay/character.service";
 
 
   ],
-  providers: [UserService, CharacterService],
+  providers: [UserService, CharacterService, CampaignService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

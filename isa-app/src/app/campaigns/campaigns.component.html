@@ -15,10 +15,54 @@
         <input matInput type="text"  placeholder="Filter">
       </mat-form-field>
     </div>
-  <div  fxLayoutAlign="center center">
-      TABELA
-  </div>
+
+    <mat-table [dataSource]="campaignsDataSource" matSort>
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Campaign_id</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.campaign_id}}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>Campaign name</mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Description </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.description }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="starts_at">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Starts at </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.starts_at }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="ends_at">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Ends at </mat-header-cell>
+        <mat-cell *matCellDef="let element">{{ element.ends_at }}</mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="action">
+        <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
+        <mat-cell fxLayout="row" fxLayoutGap="10px" *matCellDef="let element">
+          <button mat-raised-button color="accent" (click)="goToEdit(element.campaign_id)">Edit</button>
+          <button mat-raised-button color="accent" (click)="deleteCampaign(element.campaign_id)">Delete</button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let rows; columns: displayedColumns;"></mat-row>
+      <mat-header-row ></mat-header-row>
+      <mat-row ></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5,10,20,50,100]"></mat-paginator>
+    <div class="button-add">
+      <button mat-raised-button color="accent" (click)="goToAddCampaign()">Add new campaign</button>
+    </div>
+
   </mat-tab>
+
   <mat-tab label="History">
 
   </mat-tab>

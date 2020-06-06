@@ -3,6 +3,8 @@ package rs.ac.singidunum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -24,6 +26,10 @@ public class UserService {
     public Users fetchUserByUsernameAndPassword(String username, String password){
         return repository.findByUsernameAndPassword(username, password);
     }
+
+
+
+
 
 
 }
