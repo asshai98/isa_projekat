@@ -14,7 +14,7 @@ public class HistoryController {
     @Autowired
     HistoryService historyService;
 
-    @GetMapping("/campaigns")
+    @GetMapping("/history")
     @CrossOrigin(origins = "http://localhost:4200")
     public List<History> fetchCampaignsHistoryList(){
         List<History> histories = new ArrayList<History>();
@@ -22,9 +22,9 @@ public class HistoryController {
         return  histories;
     }
 
-    @GetMapping("/campaigns/{history_id}")
+    @GetMapping("/history/{history_id}")
     @CrossOrigin(origins = "http://localhost:4200")
-    public History fetchCampaignsById(@PathVariable int history_id){
+    public History fetchHistoriesById(@PathVariable int history_id){
         return historyService.fetchHistoriesById(history_id).get();
     }
 }

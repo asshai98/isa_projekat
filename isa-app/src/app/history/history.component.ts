@@ -4,6 +4,7 @@ import {MatSort} from "@angular/material/sort";
 import {MatPaginator} from "@angular/material/paginator";
 import {Router} from "@angular/router";
 import {CampaignService} from "../campaigns/campaign.service";
+import {HistoryService} from "./history.service";
 
 @Component({
   selector: 'app-history',
@@ -12,13 +13,13 @@ import {CampaignService} from "../campaigns/campaign.service";
 })
 export class HistoryComponent implements OnInit {
 
-  displayedColumns = ["id", "name", "date","lasted", "universe"];
+  displayedColumns = ["id", "campaign_name", "date","lasted", "universe", "action"];
   historyDataSource: MatTableDataSource<History>
 
   @ViewChild(MatSort) sort : MatSort;
   @ViewChild(MatPaginator) paginator : MatPaginator;
 
-  constructor(private router: Router, private _service:CampaignService) { }
+  constructor(private router: Router, private _service:HistoryService) { }
 
   ngOnInit() {
     this.historyDataSource = new MatTableDataSource<History>();
@@ -30,9 +31,11 @@ export class HistoryComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    this.campaignsDataSource.sort = this.sort;
-    this.campaignsDataSource.paginator = this.paginator;
+    this.historyDataSource.sort = this.sort;
+    this.historyDataSource.paginator = this.paginator;
   }
+
+  rate(id:number){}
 
 
 }

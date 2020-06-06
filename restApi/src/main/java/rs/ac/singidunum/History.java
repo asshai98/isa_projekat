@@ -5,18 +5,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int history_id;
 
-    private String campName;
+    private String campaign_name;
     private String date;
     private int lasted;
     private String universe;
 
-    public History(String campName, String date, int lasted, String universe) {
-        this.campName = campName;
+    public History(String campaign_name, String date, int lasted, String universe) {
+        this.campaign_name = campaign_name;
         this.date = date;
         this.lasted = lasted;
         this.universe = universe;
@@ -29,8 +30,12 @@ public class History {
         return history_id;
     }
 
-    public String getCampName() {
-        return campName;
+    public String getCampaign_name() {
+        return campaign_name;
+    }
+
+    public void setCampaign_name(String campaign_name) {
+        this.campaign_name = campaign_name;
     }
 
     public String getDate() {
@@ -49,9 +54,7 @@ public class History {
         this.history_id = history_id;
     }
 
-    public void setCampName(String campName) {
-        this.campName = campName;
-    }
+
 
     public void setDate(String date) {
         this.date = date;

@@ -27,7 +27,5 @@ export class CampaignService{
     return this._http.get<any>("http://localhost:8181/campaigns/delete/"+campaign_id);
   }
 
-  public fetchHistoryList():Observable<any>{
-    return this._http.get<any>("http://localhost:8181/campaigns");
-  }
+
 }

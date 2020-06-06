@@ -27,6 +27,7 @@ import { DeleteCampaignComponent } from './campaigns/delete-campaign/delete-camp
 import { EditCampaignComponent } from './campaigns/edit-campaign/edit-campaign.component';
 import {CampaignService} from "./campaigns/campaign.service";
 import { HistoryComponent } from './history/history.component';
+import {HistoryService} from "./history/history.service";
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { HistoryComponent } from './history/history.component';
 
 
   ],
-  providers: [UserService, CharacterService, CampaignService],
+  providers: [UserService, CharacterService, CampaignService, HistoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

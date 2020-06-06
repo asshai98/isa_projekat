@@ -1,12 +1,3 @@
-<mat-toolbar color="primary" role="heading" class="mat-toolbar">
-  <img  src="../../assets/logo.png" alt="Logo" width="60px" height="60px">
-  <div fxFlex fxLayoutAlign="end" fxLayoutGap="10px" fxHide.xs>
-    <a mat-list-item routerLink="/welcome"  style="color: white; text-decoration: none;">Welcome</a>
-    <a mat-list-item routerLink="/campaigns"  style="color: white; text-decoration: none;">Campaigns</a>
-    <a mat-list-item routerLink="/gameplay"  style="color: white; text-decoration: none;">Characters</a>
-    <a mat-list-item routerLink=""  style="color: white; text-decoration: none;">Sign out</a>
-  </div>
-</mat-toolbar>
 
 <mat-table [dataSource]="historyDataSource" matSort>
   <ng-container matColumnDef="id">
@@ -14,9 +5,9 @@
     <mat-cell *matCellDef="let element">{{ element.history_id}}</mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>History name</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{ element.name }}</mat-cell>
+  <ng-container matColumnDef="campaign_name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Campaign name</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.campaign_name }}</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="date">
@@ -26,7 +17,7 @@
 
   <ng-container matColumnDef="lasted">
     <mat-header-cell *matHeaderCellDef mat-sort-header> Lasted </mat-header-cell>
-    <mat-cell *matCellDef="let element">{{ element.lasted}}</mat-cell>
+    <mat-cell *matCellDef="let element">{{ element.lasted}} days</mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="universe">
@@ -36,8 +27,8 @@
 
   <ng-container matColumnDef="action">
     <mat-header-cell *matHeaderCellDef>Action</mat-header-cell>
-    <mat-cell fxLayout="row" fxLayoutGap="10px" *matCellDef="let element">
-      <button mat-raised-button color="accent">Rate</button>
+    <mat-cell fxLayout="row" *matCellDef="let element">
+      <button mat-raised-button color="accent" (click)="rate(element.history_id)">Rate</button>
     </mat-cell>
   </ng-container>
 
