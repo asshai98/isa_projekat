@@ -5,6 +5,8 @@ import {CharacterService} from "../../gameplay/character.service";
 import {NgForm} from "@angular/forms";
 import {Campaigns} from "../campaign";
 import {CampaignService} from "../campaign.service";
+import {MatDialog} from "@angular/material/dialog";
+import {SuccessComponent} from "../../auth/success/success.component";
 
 @Component({
   selector: 'app-add-campaign',
@@ -17,7 +19,7 @@ export class AddCampaignComponent implements OnInit {
   errorExists = false;
   errorText = "";
 
-  constructor(private router: Router, private _service:CampaignService) { }
+  constructor(private router: Router, private _service:CampaignService, private dialog: MatDialog) { }
 
   ngOnInit() {
   }
@@ -28,6 +30,7 @@ export class AddCampaignComponent implements OnInit {
       error => console.log("Exeption occured")
     );
 
+    const dialogRef = this.dialog.open(SuccessComponent);
     this.errorExists = false;
   }
 

@@ -33,6 +33,11 @@ export class CampaignsComponent implements OnInit {
 
   }
 
+  doFilter(filterValue : string) {
+    this.campaignsDataSource.filter = filterValue.trim().toLowerCase();
+  }
+
+
   ngAfterViewInit() {
     this.campaignsDataSource.sort = this.sort;
     this.campaignsDataSource.paginator = this.paginator;

@@ -3,6 +3,8 @@ import {Characters} from "../character";
 import {CharacterService} from "../character.service";
 import {NgForm} from "@angular/forms";
 import {Router} from "@angular/router";
+import {SuccessComponent} from "../../auth/success/success.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-add',
@@ -15,7 +17,7 @@ export class AddComponent implements OnInit {
 
   errorExists = false;
   errorText = "";
-  constructor(private router: Router, private _service:CharacterService) { }
+  constructor(private router: Router, private _service:CharacterService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +28,7 @@ export class AddComponent implements OnInit {
       error => console.log("Exeption occured")
     );
 
+    const dialogRef = this.dialog.open(SuccessComponent);
     this.errorExists = false;
 
   }

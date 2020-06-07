@@ -8,6 +8,12 @@
   </div>
 </mat-toolbar>
 
+<div fxLayoutAlign="center center">
+  <mat-form-field fxFlex="25%">
+    <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+  </mat-form-field>
+</div>
+
 <mat-table [dataSource]="characterDataSource" matSort>
   <ng-container matColumnDef="id">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Character_id</mat-header-cell>

@@ -9,14 +9,13 @@ import { Router } from '@angular/router';
 })
 export class SuccessComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<SuccessComponent>, private router: Router) { }
+  constructor(private dialogRef: MatDialogRef<SuccessComponent>) { }
 
   ngOnInit(): void {
   }
 
   onClick() {
     this.dialogRef.close();
-    this.router.navigate(['welcome']);
   }
 
 }

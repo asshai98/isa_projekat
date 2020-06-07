@@ -12,7 +12,7 @@
   <mat-tab label="Recommened">
     <div fxLayoutAlign="center center">
       <mat-form-field fxFlex="25%">
-        <input matInput type="text"  placeholder="Filter">
+        <input matInput type="text"  placeholder="Filter" (keyup)="doFilter($event.target.value)">
       </mat-form-field>
     </div>
 

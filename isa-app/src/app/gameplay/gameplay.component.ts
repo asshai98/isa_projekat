@@ -34,6 +34,9 @@ export class GameplayComponent implements OnInit {
     this.characterDataSource.paginator = this.paginator;
   }
 
+  doFilter(filterValue : string) {
+    this.characterDataSource.filter = filterValue.trim().toLowerCase();
+  }
 
   goToAddCharacter(){
     this.router.navigate(['add']);
@@ -46,6 +49,7 @@ export class GameplayComponent implements OnInit {
   goToDetails(id:number){
     this.router.navigate(['character', id]);
   }
+
 
   deleteProduct(id:number){
       this._service.deleteCharactersById(id).subscribe(
