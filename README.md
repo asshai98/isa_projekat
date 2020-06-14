@@ -12,3 +12,6 @@ tako kako bi bila olakšana manipulacija njima kroz user-friendly interfejs.
 Potrebno je učitati bazu i pripremiti okruženje za pokretanje RESTful servisa, kao i imati instalirane Node.js module i Angular CLI za pokretanje
 frontedn dela. Nakon pripreme potrebno je učitati ove fajlove bilo koje radno okruženje (preporuka je IntelliJ kako bi bili na jednom mestu svi)
 i aplikacija bi trebalo da funkcioniše.
+
+# Dodaci
+Uz source code mogu se naći još dva fajla to je .docx fajl u kome se nalazi napisana dokumentacija vezana za projekat, takođe i .pptx fajl koji predstavlja prezentaciju
