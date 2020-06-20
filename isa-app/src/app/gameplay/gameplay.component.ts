@@ -55,7 +55,8 @@ export class GameplayComponent implements OnInit {
       this._service.deleteCharactersById(id).subscribe(
         data=>{
           console.log("Success");
-          this.router.navigate(['gameplay']);
+          //this.router.navigate(['gameplay']);
+          this.ngOnInit();
         },
         error => console.log("Error")
       );

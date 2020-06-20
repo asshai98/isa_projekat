@@ -55,7 +55,8 @@ export class CampaignsComponent implements OnInit {
     this._service.deleteCampaignById(id).subscribe(
       data=>{
         console.log("Success");
-        this.router.navigate(['campaigns']);
+        //this.router.navigate(['campaigns']);
+        this.ngOnInit();
       },
 
       error => console.log("Error occured!")
