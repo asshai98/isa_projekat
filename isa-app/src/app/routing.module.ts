@@ -8,9 +8,9 @@ import {GameplayComponent} from "./gameplay/gameplay.component";
 import {AddComponent} from "./gameplay/add/add.component";
 import {EditComponent} from "./gameplay/edit/edit.component";
 import {ViewComponent} from "./gameplay/view/view.component";
-import {DeleteComponent} from "./gameplay/delete/delete.component";
+
 import {AddCampaignComponent} from "./campaigns/add-campaign/add-campaign.component";
-import {DeleteCampaignComponent} from "./campaigns/delete-campaign/delete-campaign.component";
+
 import {EditCampaignComponent} from "./campaigns/edit-campaign/edit-campaign.component";
 
 const rute: Routes = [
@@ -23,10 +23,9 @@ const rute: Routes = [
   {path: 'edit', component: EditComponent},
   {path: 'edit/:id', component: EditComponent},
   {path: 'character/:id', component: ViewComponent},
-  {path: 'delete/:id', component: DeleteComponent},
 
   {path: 'campaigns/add', component: AddCampaignComponent},
-  {path: 'campaigns/delete/:id', component: DeleteCampaignComponent},
+
   {path: 'campaigns/edit/:id', component: EditCampaignComponent},
 
 ];

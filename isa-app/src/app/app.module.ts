@@ -17,13 +17,13 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {UserService} from "./auth/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import { EditComponent } from './gameplay/edit/edit.component';
-import { DeleteComponent } from './gameplay/delete/delete.component';
+
 import { ViewComponent } from './gameplay/view/view.component';
 import { AddComponent } from './gameplay/add/add.component';
 
 import {CharacterService} from "./gameplay/character.service";
 import { AddCampaignComponent } from './campaigns/add-campaign/add-campaign.component';
-import { DeleteCampaignComponent } from './campaigns/delete-campaign/delete-campaign.component';
+
 import { EditCampaignComponent } from './campaigns/edit-campaign/edit-campaign.component';
 import {CampaignService} from "./campaigns/campaign.service";
 import { HistoryComponent } from './history/history.component';
@@ -40,11 +40,10 @@ import {HistoryService} from "./history/history.service";
     GameplayComponent,
     CampaignsComponent,
     EditComponent,
-    DeleteComponent,
     ViewComponent,
     AddComponent,
     AddCampaignComponent,
-    DeleteCampaignComponent,
+
     EditCampaignComponent,
     HistoryComponent
   ],

@@ -1,18 +1,15 @@
-<div class="char-image" fxLayout="row" fxLayoutAlign="center center">
-  <img src="../../../assets/fighter.jpg" alt="Character img" style="width: 370px; height: 300px; padding-top: 30px;">
+<div class="card">
+  <ul fxLayoutAlign="center center" fxLayout="column" style="color: whitesmoke; text-decoration: none; list-style-type: none;">
+    <li *ngFor="let char of characters">
+      <p style="font-size: 40px"> {{char.name}}</p>
+      <p style="background: #4C0000; text-align: center"> Age: </p>
+      <p style="font-size: 25px"> {{char.age}}</p>
+      <p style="background: #4C0000; text-align: center"> Race: </p>
+      <p style="font-size: 25px"> {{char.race}}</p>
+      <p style="background: #4C0000; text-align: center"> Class: </p>
+      <p style="font-size: 25px"> {{char.clas}}</p>
+      <p style="background: #4C0000; text-align: center"> User: </p>
+      <p style="font-size: 25px"> {{char.username}}</p>
+    </li>
+  </ul>
 </div>
-
-<ul fxLayoutAlign="center center" fxLayout="column" style="color: whitesmoke; text-decoration: none;">
-  <li *ngFor="let char of characters">
-
-    <p style="font-size: 40px"> {{char.name}}</p>
-    <p style="background: #4C0000; text-align: center"> Age: </p>
-    <p style="font-size: 25px"> {{char.age}}</p>
-    <p style="background: #4C0000; text-align: center"> Race: </p>
-    <p style="font-size: 25px"> {{char.race}}</p>
-    <p style="background: #4C0000; text-align: center"> Class: </p>
-    <p style="font-size: 25px"> {{char.clas}}</p>
-    <p style="background: #4C0000; text-align: center"> User: </p>
-    <p style="font-size: 25px"> {{char.username}}</p>
-  </li>
-</ul>

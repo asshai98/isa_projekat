@@ -9,7 +9,7 @@
 </mat-toolbar>
 
 <mat-tab-group dynamicHeight="true" color="accent" backgroundColor="primary">
-  <mat-tab label="Recommened">
+  <mat-tab label="My campaigns">
     <div fxLayoutAlign="center center">
       <mat-form-field fxFlex="25%">
         <input matInput type="text"  placeholder="Filter" (keyup)="doFilter($event.target.value)" color="accent">
@@ -63,7 +63,7 @@
 
   </mat-tab>
 
-  <mat-tab label="History">
+  <mat-tab label="Prevous Campaigns">
     <app-history></app-history>
   </mat-tab>
 
